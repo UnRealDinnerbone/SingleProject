@@ -1,0 +1,6 @@
+[submodule "workspaces/SimpleZoom"]
+	url = https://github.com/UnRealDinnerbone/SimpleZoom
+[submodule "workspaces/Yastm"]
+	url = https://github.com/UnRealDinnerbone/Yastm
+[submodule "workspaces/TrampleStopper"]
+	url = https://github.com/UnRealDinnerbone/TrampleStopper

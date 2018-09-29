@@ -7,6 +7,7 @@
 /workspaces/MC/.gradle
 
 # Included Files
+!.gitmodules
 !.gitignore
 !build.gradle
 !LICENSE.md
