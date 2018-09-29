@@ -1,13 +1,8 @@
-rootProject.name = 'McJtyMods'
+rootProject.name = 'Mods'
 
-// --------------
-// building stuff
-// --------------
+File workspacesDir = new File("workspaces")
 
-// Find the directories containing a "build.gradle" file in the root directory
-// of the project. That is, every directory containing a "build.gradle" will
-// be automatically the subproject of this project.
-def subDirs = rootDir.listFiles(new FileFilter() {
+def projects = workspacesDir.listFiles(new FileFilter() {
     boolean accept(File file) {
         if (!file.isDirectory()) {
             return false
@@ -16,6 +11,12 @@ def subDirs = rootDir.listFiles(new FileFilter() {
     }
 })
 
-subDirs.each { File dir ->
+println("Loading Projects...")
+
+projects.each { File dir ->
+    println("Loading Project: " + dir.name)
     include dir.name
+    project(":" + dir.name).projectDir = file(dir.path)
 }
+
+println("Loaded Projects")
