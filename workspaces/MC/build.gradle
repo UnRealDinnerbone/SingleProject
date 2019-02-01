@@ -18,22 +18,16 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'maven'
 
-repositories {
- 
-    maven { // JEI
-        url "http://dvs1.progwml6.com/files/maven"
-    }
-    maven { // TOP
-        name 'tterrag maven'
-        url "https://maven.tterrag.com/"
-    }
-    
-}
-
 minecraft {
-    version = "${minecraft_version}-${forge_version}"
+    if(project.hasProperty("devWorkspace")) {
+        version = project.property("minecraftVersion") + "-" + project.property("forgeVersion")
+        mappings = project.property("mappingsVersion")
+    }else {
+        version = "${minecraft_version}-${forge_version}"
+        mappings = mcp_mappings
+
+    }
     runDir = "run"
-    mappings = mcp_mappings
     useDepAts = true
 }
 
