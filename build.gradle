@@ -13,7 +13,7 @@ task settings {
     project.ext.minecraftVersion = project.property("minecraft_version")
     project.ext.mappingsVersion = project.property("mappings_version")
     project.ext.forgeVersion = project.property("forge_version")
-    project.ext.mappingsChannel = project.property("mappings_snapshot")
+    project.ext.mappingsChannel = project.property("mappings_channel")
 }
 
 subprojects.each { subproject -> evaluationDependsOn(subproject.path) }
